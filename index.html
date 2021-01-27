@@ -29,7 +29,7 @@
                            <input type="text" id="prodectNumber" class="form-control text-center" value="1">
                            <button id="numberBtn" class="btn btn-default"><i class="fas fa-plus"></i></button>
                         </div>
-                        <h5>$1219</h5>
+                        <h5>$<span id="fastPice">1219</span></h5>
                         <img src="images/remove.png" alt="" class="remove-item">
                      </div>
                   </div>
@@ -48,7 +48,7 @@
                            <button id="valeuAddBtn" class="btn btn-default"><i class="fas fa-plus"></i></button>
 
                         </div>
-                        <h5>$59</h5>
+                        <h5>$ <span id="secentPrice">59</span></h5>
                         <img src="images/remove.png" alt="" class="remove-item">
                      </div>
                   </div>
@@ -64,7 +64,7 @@
                      </div>
 
                      <div class="col-md-4 status">
-                        <h5>$1,278</h5>
+                        <h5>$ <span id="Subtotal">00</span></h5>
                         <h5>$0</h5>
                         <h5>$1,278</h5>
                      </div>
@@ -81,17 +81,64 @@
 
 
 <script>
-   // plush count
+   // iPhone 11 128GB Black plush count
       const numberBtn =document.getElementById("numberBtn");
       numberBtn.addEventListener("click",function(){
       const prodectNumber=document.getElementById("prodectNumber").value;
       const prodectValeu=parseFloat(prodectNumber);
       const trotalValeu=prodectValeu+1;
       document.getElementById("prodectNumber").value=trotalValeu;
+      
+         
+         // prodect pice
+      
+         let tottalPice= trotalValeu*1219;
+        
+         document.getElementById("fastPice").innerText=tottalPice;
+
+         const Subtotal= document.getElementById("Subtotal").innerText;
+         const subtotalNumber=parseFloat(Subtotal);
+         // let tottalPice= trotalValeu*1219;
+         // let secentPrice= trotalValeu*59;
+        const SubtotalAmount=secentPrice+secentPrice+subtotalNumber;
+   
+        document.getElementById("Subtotal").innerText=SubtotalAmount;
+
+        
+         
+      })
+// iPhone 11 Silicone Case - Black plush count
+      const valeuAddBtn =document.getElementById("valeuAddBtn");
+      valeuAddBtn.addEventListener("click",function(){
+      const prodectNumber=document.getElementById("valeunumber").value;
+      const prodectValeu=parseFloat(prodectNumber);
+      const trotalValeu=prodectValeu+1;
+      
+      document.getElementById("valeunumber").value=trotalValeu;
+
+      let secentPrice= trotalValeu*59;
+        
+        document.getElementById("secentPrice").innerText=secentPrice;
+        
+      
+
+      })
+
      
 
-})
-// minush count
+
+      
+      
+
+
+
+
+
+
+
+
+
+// iPhone 11 128GB Black minush count
 const minushNumber= document.getElementById("minusNumber") ;
 minushNumber.addEventListener("click",function(){
    const prodectNumber=document.getElementById("prodectNumber").value;
@@ -99,12 +146,43 @@ minushNumber.addEventListener("click",function(){
     const trotalValeu=prodectValeu-1;
     if(trotalValeu>=0){
       document.getElementById("prodectNumber").value=trotalValeu;
+
+// minush pice
+         let tottalPiceNumber= trotalValeu*1219;
+         if (tottalPiceNumber>=0){
+            document.getElementById("fastPice").innerText=tottalPiceNumber;
+         }
+      //    const Subtotal= document.getElementById("Subtotal").innerText;
+      //   const SubtotalAmount=tottalPice+tottalPice;
+   
+      //   document.getElementById("Subtotal").innerText=SubtotalAmount;
+        
     };
+
+    
+   
+
+        
+    
    
 })
 
-     
-  
+// iPhone 11 Silicone Case - Black minush count  
+const minusNumbers= document.getElementById("minusNumbers") ;
+minusNumbers.addEventListener("click",function(){
+   const prodectNumber=document.getElementById("valeunumber").value;
+    const prodectValeu=parseFloat(prodectNumber);
+    const trotalValeu=prodectValeu-1;
+    if(trotalValeu>=0){
+      document.getElementById("valeunumber").value=trotalValeu;
+
+    }
+    let tottalPice= trotalValeu*59;
+         if (tottalPice>=0){
+            document.getElementById("secentPrice").innerText=tottalPice;
+         }
+   })
+
       
 
 
